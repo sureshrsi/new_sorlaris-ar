@@ -1,0 +1,8 @@
+RewriteEngine On
+RewriteCond %{HTTP_HOST} solaris-ar\.com [NC]
+RewriteCond %{SERVER_PORT} 80
+RewriteRule ^(.*)$ https://solaris-ar.com/$1 [R,L]
+
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Origin: <origin>
+Access-Control-Allow-Origin: null

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .header {
+            width: 100%;
+            height: 100px;
+            border: 1px solid black;
+
+        }
+        .header h1 {
+            text-align: center;
+            line-height: 100px;
+        }
+        .nav-bar {
+            width: 100%;
+            height: 100px;
+            border: 1px solid black;
+        }
+        .nav-bar h1 {
+            text-align: center;
+            line-height: 100px;
+        }
+        .content-area {
+            display: flex;
+        }
+        .aside {
+            width: 100%;
+            height: 400px;
+        }
+
+        .content {
+    display: none;
+    padding: 10px;
+    background-color: #f0f0f0;
+    margin-top: 5px;
+  }
+    </style>
+</head>
+<body>
+
+    
+<button onclick="toggleContent('content1')">Toggle Content 1</button>
+<div id="content1" class="content">
+  Content 1
+</div>
+
+<button onclick="toggleContent('content2')">Toggle Content 2</button>
+<div id="content2" class="content">
+  Content 2
+</div>
+
+<button onclick="toggleContent('content3')">Toggle Content 3</button>
+<div id="content3" class="content">
+  Content 3
+</div>
+
+
+    <div class="header">
+        <h1>Header</h1>
+    </div>
+    <div class="nav-bar">
+        <h1>Nav bar</h1>
+    </div>
+    <div class="content-area">
+        <div class="aside">
+            <h1>aside</h1>
+        </div>
+        <!-- <div class="content">
+            <h1>content</h1>
+        </div> -->
+    </div>
+   
+    <div class="footer">
+        <h1>footer</h1>
+    </div>
+
+    <script>
+        function toggleContent(id) {
+    var content = document.getElementById(id);
+    var allContent = document.getElementsByClassName('content');
+    for (var i = 0; i < allContent.length; i++) {
+      if (allContent[i].id !== id) {
+        allContent[i].style.display = 'none';
+      }
+    }
+    if (content.style.display === 'none') {
+      content.style.display = 'block';
+    } else {
+      content.style.display = 'none';
+    }
+  }
+      </script>
+</body>
+</html>
